@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\LetterType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class LetterFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'=>$this->faker->title,
+            'sender'=>$this->faker->name,
+            'receiver'=>$this->faker->name,
+            'letter_type_id'=>LetterType::factory()->create()->id
         ];
     }
 }

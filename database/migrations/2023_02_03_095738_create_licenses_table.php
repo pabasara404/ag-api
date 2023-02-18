@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('license_issuings', function (Blueprint $table) {
+        Schema::create('licenses', function (Blueprint $table) {
             $table->id();
-            $table->integer('issuable_id');
-            $table->string('issuable_type');
+            $table->timestamp('issue_date');
+            $table->timestamp('expire_date');
+            $table->foreignId('citizen_id')->references('id')->on('citizens');
+            $table->foreignId('license_type_id')->references('id')->on('license_types');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('license_issuings');
+        Schema::dropIfExists('licenses');
     }
 };

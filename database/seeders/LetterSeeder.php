@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Employee;
+use App\Models\Letter;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,8 +14,13 @@ class LetterSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(EmployeeSeeder $employeeSeeder)
     {
-        //
+        $employeeSeeder->run();
+        $letters = Letter::factory(10)->create();
+
+        Employee::all()->each(function(Employee $employee)use($letters){
+            $employee->letters()->attach($letters);
+        });
     }
 }

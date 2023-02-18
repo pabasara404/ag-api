@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\LetterType>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\GnOfficer>
  */
-class LetterTypeFactory extends Factory
+class GnOfficerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class LetterTypeFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->name
+            //
         ];
     }
 }

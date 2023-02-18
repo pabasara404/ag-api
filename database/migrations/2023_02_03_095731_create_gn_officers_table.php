@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('license_issuings', function (Blueprint $table) {
+        Schema::create('gn_officers', function (Blueprint $table) {
             $table->id();
-            $table->integer('issuable_id');
-            $table->string('issuable_type');
+            $table->foreignId('user_id')->nullable()->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('license_issuings');
+        Schema::dropIfExists('gn_officers');
     }
 };

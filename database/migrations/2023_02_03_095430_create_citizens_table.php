@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('licenses', function (Blueprint $table) {
+        Schema::create('citizens', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('issue_date');
-            $table->timestamp('expire_date');
-            $table->foreignId('employee_id')->references('id')->on('employees');
-            $table->foreignId('license_type_id')->references('id')->on('license_types');
+            $table->foreignId('user_id')->nullable()->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('licenses');
+        Schema::dropIfExists('citizens');
     }
 };

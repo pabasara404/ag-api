@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Letter;
-use App\Http\Requests\StoreLetterRequest;
-use App\Http\Requests\UpdateLetterRequest;
+use App\Models\Role;
+use App\Http\Requests\StoreRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
 
-class LetterController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return response()->json(
-          Letter::with(['employees.user'])->get()
-        );
+        //
     }
 
     /**
@@ -33,10 +31,10 @@ class LetterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreLetterRequest  $request
+     * @param  \App\Http\Requests\StoreRoleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreLetterRequest $request)
+    public function store(StoreRoleRequest $request)
     {
         //
     }
@@ -44,10 +42,10 @@ class LetterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Letter  $letter
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Letter $letter)
+    public function show(Role $role)
     {
         //
     }
@@ -55,10 +53,10 @@ class LetterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Letter  $letter
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Letter $letter)
+    public function edit(Role $role)
     {
         //
     }
@@ -66,11 +64,11 @@ class LetterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateLetterRequest  $request
-     * @param  \App\Models\Letter  $letter
+     * @param  \App\Http\Requests\UpdateRoleRequest  $request
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateLetterRequest $request, Letter $letter)
+    public function update(UpdateRoleRequest $request, Role $role)
     {
         //
     }
@@ -78,10 +76,10 @@ class LetterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Letter  $letter
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Letter $letter)
+    public function destroy(Role $role)
     {
         //
     }
