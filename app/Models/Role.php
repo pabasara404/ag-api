@@ -17,7 +17,8 @@ class Role extends Model
         1 => 'Field Officer',
         2 => 'Grama Niladari',
         3 => 'Employee',
-        4 => 'Citizen'
+        4 => 'Citizen',
+        5 => 'Client'
     ];
 
     public function getRoleTypeAttribute(){

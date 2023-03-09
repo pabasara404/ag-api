@@ -19,10 +19,11 @@ class EmployeeFactory extends Factory
     public function definition()
     {
         return [
-            'first_name' => $this->faker->name,
-            'second_name' => $this->faker->name,
+            'name' => $this->faker->name,
             'address' => $this->faker->address,
+            'nic' => $this->faker->creditCardNumber,
             'contact_number' => $this->faker->phoneNumber,
+            'date_of_birth' => $this->faker->date,
             'user_id' => User::factory(1)->createOne()->id
         ];
     }

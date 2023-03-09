@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('gn_divisions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
-            $table->string('nic');
-            $table->string('contact_number');
-            $table->date('date_of_birth');
-            $table->foreignId('user_id')->nullable()->references('id')->on('users');
-            $table->foreignId('role_id')->nullable()->references('id')->on('roles');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('gn_divisions');
     }
 };
