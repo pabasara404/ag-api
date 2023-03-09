@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\EmployeeActions;
-use App\Models\Employee;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use App\Http\Resources\EmployeeResource;
+use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return response()->json(
-            EmployeeActions::all()
+        return EmployeeResource::collection(
+            Employee::with("role")->get()
         );
     }
 
@@ -29,7 +29,9 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
-        //
+        Employee::create($request->toArray());
+
+        return response()->noContent();
     }
 
     /**
@@ -52,7 +54,9 @@ class EmployeeController extends Controller
      */
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
-        //
+        $employee->update($request->toArray());
+
+        return response()->noContent();
     }
 
     /**
@@ -63,6 +67,8 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+
+        return response()->noContent();
     }
 }

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('citizens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->references('id')->on('users');
+            $table->foreignId('gn_division')->nullable()->references('id')->on('gn_divisions');
             $table->timestamps();
         });
     }

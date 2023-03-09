@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LetterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,11 +17,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 Route::middleware('auth:sanctum')->group(function () {
 });
-Route::get('letter',[LetterController::class, 'index']);
 
+Route::get('user', function (Request $request) {
+    return $request->user();
+});
+
+Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
+Route::get('logout', [AuthController::class, 'logout']);
+
+//routes for letters
+Route::get('letter', [LetterController::class, 'index']);
+
+//routes for employees
+Route::get('employee', [EmployeeController::class, 'index']);
+Route::put('employee/{employee}', [EmployeeController::class, 'update']);
+Route::delete('employee/{employee}', [EmployeeController::class, 'destroy']);
+Route::post('employee', [EmployeeController::class, 'store']);
