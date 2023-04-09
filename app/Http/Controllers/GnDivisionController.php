@@ -15,7 +15,9 @@ class GnDivisionController extends Controller
      */
     public function index()
     {
-        //
+        return RoleResource::collection(
+            GnDivision::all()
+        );
     }
 
     /**
@@ -36,7 +38,9 @@ class GnDivisionController extends Controller
      */
     public function store(StoreGnDivisionRequest $request)
     {
-        //
+        GnDivision::create($request->toArray());
+
+        return response()->noContent();
     }
 
     /**
@@ -70,7 +74,9 @@ class GnDivisionController extends Controller
      */
     public function update(UpdateGnDivisionRequest $request, GnDivision $gnDivision)
     {
-        //
+        $gnDivision->update($request->toArray());
+
+        return response()->noContent();
     }
 
     /**
@@ -81,6 +87,8 @@ class GnDivisionController extends Controller
      */
     public function destroy(GnDivision $gnDivision)
     {
-        //
+        $gnDivision->delete();
+
+        return response()->noContent();
     }
 }

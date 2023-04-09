@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
              'email' => 'test@example.com',
          ]);
         $employeeSeeder->run();
+        $this->call(RoleSeeder::class);
+        $this->call(GnDivisionSeeder::class);
     }
+
 }

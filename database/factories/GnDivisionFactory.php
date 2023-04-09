@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\GnOfficer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class GnDivisionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'gn_code' => $this->faker->unique()->regexify('[A-Z]{3}\d{4}'),
+            'name' => $this->faker->city,
+            'mpa_code' => $this->faker->unique()->regexify('[A-Z]{3}\d{4}'),
+            'grama_officer_id' => GnOfficer::inRandomOrder()->first()->id,
         ];
     }
 }

@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gn_divisions', function (Blueprint $table) {
+        Schema::create('tree_counts', function (Blueprint $table) {
             $table->id();
-            $table->string('gn_code');
-            $table->string('name');
-            $table->string('mpa_code');
-            $table->foreignId('gn_officer_id')->nullable()->references('id')->on('gn_officers');
+            $table->string('breadfruit');
+            $table->string('coconut');
+            $table->string('jackfriut');
+            $table->string('palmyra');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gn_divisions');
+        Schema::dropIfExists('tree_counts');
     }
 };

@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\GnOfficer>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TreeCount>
  */
-class GnOfficerFactory extends Factory
+class TreeCountFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,7 @@ class GnOfficerFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'user_id' => User::factory(1)->createOne()->id
+            //
         ];
     }
 }

@@ -12,14 +12,20 @@ class Role extends Model
     protected $fillable = [
         'role_type',
     ];
-
+    protected $attributes = [
+        'role_type' => 5,
+    ];
     public static array $roleTypes = [
         1 => 'Field Officer',
         2 => 'Grama Niladari',
         3 => 'Employee',
-        4 => 'Citizen',
+        4 => 'Admin',
         5 => 'Client',
-        6 => 'Admin ',
+        6 => 'Executive',
+        7 => 'Samurdhi Officer',
+        8 => 'Excise Department',
+        9 => 'Department of Revenue',
+        10 => 'Chief Clerk',
     ];
 
     public function getRoleTypeAttribute(){
