@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GnDivisionResource;
 use App\Models\GnDivision;
 use App\Http\Requests\StoreGnDivisionRequest;
 use App\Http\Requests\UpdateGnDivisionRequest;
@@ -11,11 +12,11 @@ class GnDivisionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return RoleResource::collection(
+        return GnDivisionResource::collection(
             GnDivision::all()
         );
     }

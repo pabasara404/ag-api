@@ -58,7 +58,8 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        // $userinfo =  auth()->user();
-        // return $this->handleResponse($userinfo, 'Successfully logged out.');
+        $userinfo =  auth()->user();
+
+        return response()->noContent();
     }
 }
