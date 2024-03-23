@@ -50,6 +50,7 @@ class TimberCuttingPermitApplicationResource extends JsonResource
             "cutted_other_tree_count"=> $this->cutted_other_tree_count,
             "planted_tree_count"=> $this->planted_tree_count,
             "road_to_land"=> $this->road_to_land,
+//            "reasons"=>
 
         ];
     }

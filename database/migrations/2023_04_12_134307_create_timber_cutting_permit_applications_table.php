@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('timber_seller_checked_value');
             $table->string('non_commercial_use_checked_value');
             $table->string('ownership_of_land_checked_value');
-            $table->string('cutted_other_tree_count');
+            $table->string('trees_cut_before');
             $table->string('planted_tree_count');
             $table->string('road_to_land');
+            $table->json('reasons');
             $table->foreignId('gn_division_id')->nullable()->references('id')->on('gn_divisions');
             $table->foreignId('tree_detail_id')->nullable()->references('id')->on('tree_details');
             $table->foreignId('deed_detail_id')->nullable()->references('id')->on('deed_details');

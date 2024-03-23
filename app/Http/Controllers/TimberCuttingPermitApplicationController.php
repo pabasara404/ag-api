@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Employee\EmployeeActions;
+use App\Actions\TimberCuttingPermitApplication\TimberCuttingPermitApplicationAction;
 use App\Http\Resources\TimberCuttingPermitApplicationResource;
 use App\Models\TimberCuttingPermitApplication;
 use App\Http\Requests\StoreTimberCuttingPermitApplicationRequest;
@@ -44,9 +45,12 @@ class TimberCuttingPermitApplicationController extends Controller
      * @param  \App\Http\Requests\StoreTimberCuttingPermitApplicationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTimberCuttingPermitApplicationRequest $request)
+    public function store(
+        StoreTimberCuttingPermitApplicationRequest $request
+    )
     {
-        //
+        TimberCuttingPermitApplicationAction::store($request->toArray());
+
     }
 
     /**

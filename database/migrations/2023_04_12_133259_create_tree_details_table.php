@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('height');
             $table->string('girth');
-            $table->string('fruit_status');
+            $table->boolean('reproducibility');
             $table->string('age');
             $table->timestamps();
         });

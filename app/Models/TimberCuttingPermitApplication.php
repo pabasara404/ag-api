@@ -9,6 +9,10 @@ class TimberCuttingPermitApplication extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'reasons' => 'array'
+    ];
+
     public function gn_division(){
         return $this->belongsTo(GnDivision::class);
     }

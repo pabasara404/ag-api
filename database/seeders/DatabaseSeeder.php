@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $employeeSeeder->run();
         $this->call(RoleSeeder::class);
         $this->call(GnDivisionSeeder::class);
+        $this->call(TreeCuttingReasonSeeder::class);
     }
 
 }

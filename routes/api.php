@@ -6,6 +6,7 @@ use App\Http\Controllers\GnDivisionController;
 use App\Http\Controllers\LetterController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TimberCuttingPermitApplicationController;
+use App\Http\Controllers\TreeCuttingReasonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,3 +62,9 @@ Route::get('role', [RoleController::class, 'index']);
 Route::put('role/{role}', [RoleController::class, 'update']);
 Route::delete('role/{role}', [RoleController::class, 'destroy']);
 Route::post('role', [RoleController::class, 'store']);
+
+//routes for treeCuttingReasons
+Route::get('treeCuttingReason', [TreeCuttingReasonController::class, 'index']);
+Route::put('treeCuttingReason/{treeCuttingReason}', [TreeCuttingReasonController::class, 'update']);
+Route::delete('treeCuttingReason/{treeCuttingReason}', [TreeCuttingReasonController::class, 'destroy']);
+Route::post('treeCuttingReason', [TreeCuttingReasonController::class, 'store']);
